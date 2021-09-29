@@ -1,15 +1,3 @@
 theme: jekyll-theme-midnight
 title: My own github page
-description: Vašou úlohou je vytvoriť program v ľubovoľnom programovacom jazyku nasledovne:
-1. Program dokáže od užívateľa prijať informáciu v bitovom zápise napr. slovo 0101.
-2. Program umožní definovať užívateľovi lineárny (maticový) bezpečnostný kód, ktorý dokáže detegovať minimálne 2-násobú chybu a opraviť minimálne 1-násobnú chybu napr. Hammingov (7,4)-kód. Možné bude vybrať minimálne z 3 rôznych kódov spĺňajúcich uvedenú podmienku.
-3. Užívateľ musí zadať generujúcu maticu daného kódu. To musíte realizovať aj v rámci programu aj cez TXT súbor.
-4. Pri generujúcej matici musíte overiť, že matica je korektná (spĺňa tri podmienky pre genereujúcu maticu), že má správne rozmery a že je systematická. Systematickosť môžete buď vyžadovať od užívateľa, alebo skúsiť peviesť v danej matici permutáciu stĺpcov a vypísať výsledok - následne buď povoliť pokračovanie, alebo nie.
-5. Program musí vypísať Minimálnu (Hammingovu) vzdialenosť kódu (d).
-6. Následne program musí zakódovať bitové slovo (informáciu).
-7. Program musí overiť syndróm a informovať užívateľa o výsledku tohto overenia.
-8. Program musí dekódovať slovo a v prípade, že je nekódové, previesť opravu, prípadne ak obsahuje dané slovo viac chýb vypísať, že obsahuje viac kao 1 chybu a kód ju nedokáže opraviť.
-9. Ku každému kódu musíte prirpaviť súbor so vzorovou generujúcou maticou.
-10. Ku každému kódu si pripravte ako ukážku rôzne slová s jedno i viacnásobnými chybami pre účely demonštrácie.
-11. Výstup a komunikácia programu s užívateľom musí byť zrozumiteľná. Odporúčam GUI, alebo web, prípadne prepracované konzolové rozhranie.
-12. Zdrojový kód náležite okomentujte. 
+description: desc
