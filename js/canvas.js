@@ -1,45 +1,42 @@
-var canvas = document.getElementById("myCanvas");
+var canvas1 = document.getElementById("myCanvas1");
+var canvas2 = document.getElementById("myCanvas2");
 var debug = document.getElementById("debug");
 
-var ctx = canvas.getContext("2d");
+var ctx1 = canvas1.getContext("2d");
+var ctx2 = canvas2.getContext("2d");
 
 var img = new Image();
-img.src = "resources/images/scream.jpg";
+img.src = "resources/images/test1.png";
 img.onload = imageManipulation;
 
 function imageManipulation(){
-  var cw = canvas.width;
-  var ch = canvas.height;
+  var cw = canvas1.width;
+  var ch = canvas1.height;
 
   var w = img.width;
   var h = img.height;
 
-  
-
   var sizer = scalePreserveAspectRatio(w, h, cw, ch);
 
-  var xCoord = cw/2-(w/2)*sizer;
-  var yCoord = ch/2-(h/2)*sizer;
+  var wCoord = w;
+  var hCoord = h;
+  var xCoord = cw/2-(wCoord/2);
+  var yCoord = ch/2-(hCoord/2);
 
-  ctx.drawImage(img, xCoord, yCoord, w*sizer, h*sizer);
+  ctx1.clearRect(0, 0, cw, ch);
+  ctx1.drawImage(img, xCoord, yCoord, wCoord, hCoord);
 
-  var imgData = ctx.getImageData(xCoord, yCoord, w*sizer, h*sizer);
+  var imgData = ctx1.getImageData(xCoord, yCoord, wCoord, hCoord);
 
-  debug.textContent = "sizer: " + imgData.data.length;
+  var rescaledImgData = getUpscaledImgData(imgData, cw, ch);
 
-  editImage(imgData);
+  ctx2.clearRect(0, 0, cw, ch);
+  ctx2.putImageData(rescaledImgData, cw/2-rescaledImgData.width/2, ch/2-rescaledImgData.height/2);
 
-  ctx.clearRect(0, 0, cw, ch);
-  ctx.putImageData(imgData, xCoord, yCoord);
-
+  debug.textContent = "debug: imgData.data.length = " + imgData.data.length;
 }
 
 function scalePreserveAspectRatio(imgW,imgH,maxW,maxH){
   return(Math.min((maxW/imgW),(maxH/imgH)));
 }
 
-function editImage(imgData) {
-  for (let i = 0; i < 100000; i++) {
-    imgData.data[i] = (i*2)%255;
-  } 
-}
