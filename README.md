@@ -1,3 +1,3 @@
 # JanMrogala.github.io
 
-Go to [about page](about.md)
+Go to [test page](markdownPages/test/README.md)
