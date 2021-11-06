@@ -1,3 +1,3 @@
 # JanMrogala.github.io
 
-go to
+Go to [about page](about.md)
