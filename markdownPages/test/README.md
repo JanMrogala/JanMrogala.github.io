@@ -1,4 +1,4 @@
-*[return](../../JanMrogala.github.io)*
+*[return](/../../)*
 
 # Test page
 
