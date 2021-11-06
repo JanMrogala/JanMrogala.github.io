@@ -1,3 +1,0 @@
-title: ABOUT PAGE
-
-test
