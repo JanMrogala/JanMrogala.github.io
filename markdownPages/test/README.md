@@ -1,4 +1,4 @@
-*[return](../../README.md)*
+*[return](../../)*
 
 # Test page
 
