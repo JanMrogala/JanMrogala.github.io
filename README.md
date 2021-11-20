@@ -2,4 +2,4 @@
 
 Go to [test page](markdownPages/test)
 
-the web page: [https://janmrogala.github.io/](https://janmrogala.github.io/)
+this is the main page.
