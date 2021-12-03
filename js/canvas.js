@@ -9,7 +9,7 @@ var img = new Image();
 img.src = "resources/images/test1.png";
 img.onload = imageManipulation;
 
-function imageManipulation(){
+function imageManipulation() {
   var cw = canvas1.width;
   var ch = canvas1.height;
 
@@ -20,8 +20,8 @@ function imageManipulation(){
 
   var wCoord = w;
   var hCoord = h;
-  var xCoord = cw/2-(wCoord/2);
-  var yCoord = ch/2-(hCoord/2);
+  var xCoord = cw / 2 - wCoord / 2;
+  var yCoord = ch / 2 - hCoord / 2;
 
   ctx1.clearRect(0, 0, cw, ch);
   ctx1.drawImage(img, xCoord, yCoord, wCoord, hCoord);
@@ -31,12 +31,13 @@ function imageManipulation(){
   var rescaledImgData = getUpscaledImgData(imgData, cw, ch);
 
   ctx2.clearRect(0, 0, cw, ch);
-  ctx2.putImageData(rescaledImgData, cw/2-rescaledImgData.width/2, ch/2-rescaledImgData.height/2);
-
-  debug.textContent = "debug: imgData.data.length = " + imgData.data.length;
+  ctx2.putImageData(
+    rescaledImgData,
+    cw / 2 - rescaledImgData.width / 2,
+    ch / 2 - rescaledImgData.height / 2
+  );
 }
 
-function scalePreserveAspectRatio(imgW,imgH,maxW,maxH){
-  return(Math.min((maxW/imgW),(maxH/imgH)));
+function scalePreserveAspectRatio(imgW, imgH, maxW, maxH) {
+  return Math.min(maxW / imgW, maxH / imgH);
 }
-
