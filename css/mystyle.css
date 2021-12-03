@@ -1,30 +1,5 @@
-body {
-  background-color: rgb(18, 32, 37);
-}
-
-h1 {
-  color: rgb(42, 130, 156);
-  margin: 40px;
-}
-
-p {
-  color: rgb(163, 231, 255);
-  margin: 20px;
-  margin-left: 80px;
-}
-
-canvas {
-  border: 3px solid green;
+#myCanvas1, #myCanvas2 {
+  background-color: #455a64;
+  border: 1px solid black;
   padding: 10px;
-  margin: 10px;
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-
-#debug {
-  color: red;
 }

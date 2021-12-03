@@ -25,6 +25,21 @@ function imageManipulation() {
 
   ctx1.clearRect(0, 0, cw, ch);
   ctx1.drawImage(img, xCoord, yCoord, wCoord, hCoord);
+}
+
+function convertToRight() {
+  var cw = canvas1.width;
+  var ch = canvas1.height;
+
+  var w = img.width;
+  var h = img.height;
+
+  var sizer = scalePreserveAspectRatio(w, h, cw, ch);
+
+  var wCoord = w;
+  var hCoord = h;
+  var xCoord = cw / 2 - wCoord / 2;
+  var yCoord = ch / 2 - hCoord / 2;
 
   var imgData = ctx1.getImageData(xCoord, yCoord, wCoord, hCoord);
 
