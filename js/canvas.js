@@ -53,6 +53,12 @@ function convertToRight() {
   );
 }
 
+function clearRightCanvas() {
+  var cw = canvas1.width;
+  var ch = canvas1.height;
+  ctx2.clearRect(0, 0, cw, ch);
+}
+
 function scalePreserveAspectRatio(imgW, imgH, maxW, maxH) {
   return Math.min(maxW / imgW, maxH / imgH);
 }
