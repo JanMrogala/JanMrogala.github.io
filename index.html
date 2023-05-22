@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="description" content="My personal website">
-    <meta name="author" content="Jan Mrógala">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My personal website" />
+    <meta name="author" content="Jan Mrógala" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jan Mrógala web</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="resources/images/favicon.ico"
+    />
 
-    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
-    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css" />
+    <link href="css/index.css" rel="stylesheet" />
 
     <script src="libs/jquery/jquery-3.6.0.min.js"></script>
+  </head>
 
-</head>
-
-<body class="blue-grey darken-4">
-
+  <body class="blue-grey darken-4">
     <nav class="blue-grey darken-3">
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li class="active"><a href="index.html"><b>Home</b></a></li>
-                <li><a href="game.html">Game</a></li>
-                <li><a href="page1.html">Page 1</a></li>
-                <li><a href="page2.html">Page 2</a></li>
-            </ul>
-        </div>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li class="active">
+            <a href="index.html"><b>Home</b></a>
+          </li>
+          <li><a href="game.html">Game</a></li>
+          <li><a href="page1.html">Page 1</a></li>
+          <li><a href="page2.html">Page 2</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container">
+        
+      <div class="carousel" id="imageCarousel"></div>
 
-        <div class="carousel">
-            <a class="carousel-item"><img src="./resources/images/dog1.jpg"></a>
-            <a class="carousel-item"><img src="./resources/images/dog2.jpg"></a>
-            <a class="carousel-item"><img src="./resources/images/dog3.png"></a>
-            <a class="carousel-item"><img src="./resources/images/dog4.jpeg"></a>
-            <a class="carousel-item"><img src="./resources/images/dog5.jpg"></a>
+      <div class="row">
+        <div class="col s2 offset-s3 center-align">
+          <canvas id="myCanvas1" width="100" height="100"></canvas>
         </div>
 
-        <div class="row">
-            <div class="col s2 offset-s3 center-align">
-                <canvas id="myCanvas1" width="100" height="100"></canvas>
-            </div>
-
-            <div class="col s2 center-align">
-                <a class="waves-effect waves-light blue-grey darken-3 btn-large" id="btnConvertImg" style="margin-top: 18%">Enlarge</a>
-            </div>
-
-            <div class="col s2 center-align">
-                <canvas id="myCanvas2" width="100" height="100"></canvas>
-            </div>
+        <div class="col s2 center-align">
+          <a
+            class="waves-effect waves-light blue-grey darken-3 btn-large"
+            id="btnConvertImg"
+            style="margin-top: 18%"
+            >Enlarge</a
+          >
         </div>
+
+        <div class="col s2 center-align">
+          <canvas id="myCanvas2" width="100" height="100"></canvas>
+        </div>
+      </div>
     </div>
 
     <script src="libs/materialize/js/materialize.min.js"></script>
@@ -61,7 +62,5 @@
     <script src="js/imageOperations.js"></script>
     <script src="js/canvas.js"></script>
     <script src="js/index.js"></script>
-
-</body>
-
+  </body>
 </html>
