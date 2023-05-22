@@ -1,6 +1,5 @@
 var canvas1 = document.getElementById("myCanvas1");
 var canvas2 = document.getElementById("myCanvas2");
-var debug = document.getElementById("debug");
 
 var ctx1 = canvas1.getContext("2d");
 var ctx2 = canvas2.getContext("2d");
@@ -15,8 +14,6 @@ function imageManipulation() {
 
   var w = img.width;
   var h = img.height;
-
-  var sizer = scalePreserveAspectRatio(w, h, cw, ch);
 
   var wCoord = w;
   var hCoord = h;
@@ -33,8 +30,6 @@ function convertToRight() {
 
   var w = img.width;
   var h = img.height;
-
-  var sizer = scalePreserveAspectRatio(w, h, cw, ch);
 
   var wCoord = w;
   var hCoord = h;
