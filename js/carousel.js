@@ -1,6 +1,4 @@
-
-
-const imageFolder = 'resources/images/carousel'; // Path to the local image folder
+const imageFolder = '/resources/images/carousel'; // Path to the local image folder
 const imageCarousel = document.getElementById('imageCarousel');
 
 fetchImageFiles(imageFolder)
