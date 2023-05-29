@@ -1,4 +1,4 @@
-const imageFolder = 'https://github.com/JanMrogala/JanMrogala.github.io/tree/main/resources/images/carousel'; // Path to the local image folder
+const imageFolder = 'resources/images/carousel'; // Path to the folder in the GitHub repository
 const imageCarousel = document.getElementById('imageCarousel');
 
 fetchImageFiles(imageFolder)
@@ -9,7 +9,7 @@ fetchImageFiles(imageFolder)
       carouselItem.classList.add('carousel-item', 'valign-wrapper');
 
       const img = document.createElement('img');
-      img.src = image;
+      img.src = image.download_url;
 
       carouselItem.appendChild(img);
       imageCarousel.appendChild(carouselItem);
@@ -24,37 +24,16 @@ fetchImageFiles(imageFolder)
 
 function fetchImageFiles(folder) {
   return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', folder);
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        const files = parseImageFiles(xhr.responseText);
-        resolve(files);
-      } else {
+    fetch(`https://api.github.com/repos/JanMrogala/JanMrogala.github.io/contents/${folder}`)
+      .then(response => response.json())
+      .then(data => {
+        const imageFiles = data.filter(item => item.type === 'file' && isImageFile(item.name));
+        resolve(imageFiles);
+      })
+      .catch(error => {
         reject('Error fetching image files.');
-      }
-    };
-    xhr.onerror = function () {
-      reject('Error fetching image files.');
-    };
-    xhr.send();
+      });
   });
-}
-
-function parseImageFiles(responseText) {
-  const parser = new DOMParser();
-  const html = parser.parseFromString(responseText, 'text/html');
-  const links = html.getElementsByTagName('a');
-
-  const imageFiles = [];
-  for (let i = 0; i < links.length; i++) {
-    const href = links[i].getAttribute('href');
-    if (isImageFile(href)) {
-      imageFiles.push(href);
-    }
-  }
-
-  return imageFiles;
 }
 
 function isImageFile(filename) {
