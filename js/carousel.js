@@ -4,7 +4,11 @@ const imageCarousel = document.getElementById('imageCarousel');
 fetchImageFiles(imageFolder)
   .then(imageFiles => {
     console.log(imageFiles);
-    imageFiles.forEach(image => {
+    
+    // Randomize the order of imageFiles array
+    const shuffledImageFiles = shuffleArray(imageFiles);
+
+    shuffledImageFiles.forEach(image => {
       const carouselItem = document.createElement('a');
       carouselItem.classList.add('carousel-item', 'valign-wrapper');
 
@@ -40,4 +44,13 @@ function isImageFile(filename) {
   const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
   const extension = filename.substring(filename.lastIndexOf('.')).toLowerCase();
   return allowedExtensions.includes(extension);
+}
+
+function shuffleArray(array) {
+  // Fisher-Yates shuffle algorithm
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
