@@ -1,8 +1,9 @@
-const imageFolder = '/resources/images/carousel'; // Path to the local image folder
+const imageFolder = 'resources/images/carousel'; // Path to the local image folder
 const imageCarousel = document.getElementById('imageCarousel');
 
 fetchImageFiles(imageFolder)
   .then(imageFiles => {
+    console.log(imageFiles);
     imageFiles.forEach(image => {
       const carouselItem = document.createElement('a');
       carouselItem.classList.add('carousel-item', 'valign-wrapper');
