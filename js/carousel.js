@@ -1,4 +1,4 @@
-const imageFolder = 'resources/images/carousel'; // Path to the local image folder
+const imageFolder = 'https://github.com/JanMrogala/JanMrogala.github.io/tree/main/resources/images/carousel'; // Path to the local image folder
 const imageCarousel = document.getElementById('imageCarousel');
 
 fetchImageFiles(imageFolder)
