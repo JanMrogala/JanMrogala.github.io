@@ -3,7 +3,6 @@ const imageCarousel = document.getElementById('imageCarousel');
 
 fetchImageFiles(imageFolder)
   .then(imageFiles => {
-    console.log(imageFiles);
     
     // Randomize the order of imageFiles array
     const shuffledImageFiles = shuffleArray(imageFiles);
