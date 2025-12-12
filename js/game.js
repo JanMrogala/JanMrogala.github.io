@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let commandResponse = new Map();
 
     // Set the size and speed of the rectangle
-    const fps = 10;
+    const fps = 45;
     const char_width = 50;
     const char_height = 50;
     const speed = 5;
